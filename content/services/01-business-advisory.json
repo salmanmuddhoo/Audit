@@ -1,0 +1,88 @@
+{
+  "slug": "business-advisory",
+  "name": "Business Advisory",
+  "order": 1,
+  "strapline": "Better information. Better processes. Better decisions.",
+  "description": "Practical support to understand how your organisation really performs, simplify the way work gets done and give management the information it needs to decide with confidence.",
+  "icon": "briefcase",
+  "solutions": [
+    {
+      "slug": "business-360-diagnostic",
+      "name": "Business 360° Diagnostic",
+      "shortName": "360° Diagnostic",
+      "tagline": "A holistic assessment of the organisation and its improvement priorities.",
+      "summary": "A structured, independent review of how strategy, people, processes, performance, risks and controls work together, resulting in a clear and prioritised improvement roadmap.",
+      "icon": "compass",
+      "featured": true,
+      "whoItIsFor": [
+        "Owners and directors who want an objective view of the business before the next stage of growth.",
+        "Management teams dealing with recurring issues whose root cause is unclear.",
+        "Organisations preparing for investment, restructuring or a change in leadership."
+      ],
+      "whatWeAssess": [
+        "Strategy, objectives and how performance is measured",
+        "Organisation structure, roles and accountability",
+        "Core business processes and key hand-offs",
+        "Financial and management information",
+        "Principal risks and the controls that address them",
+        "Governance and compliance arrangements"
+      ],
+      "outcomes": [
+        "A 360° diagnostic report with findings rated by impact and urgency",
+        "A prioritised improvement roadmap with owners and timelines",
+        "Quick wins that can be implemented immediately"
+      ],
+      "relatedTools": ["business-diagnostic"]
+    },
+    {
+      "slug": "process-and-sop-transformation",
+      "name": "Process & SOP Transformation",
+      "shortName": "Process & SOPs",
+      "tagline": "Review, simplify and strengthen processes before documenting practical procedures.",
+      "summary": "We map how work actually happens, remove duplication and weak points, and then document practical Standard Operating Procedures that people will genuinely use.",
+      "icon": "workflow",
+      "whoItIsFor": [
+        "Growing organisations where knowledge sits with a few individuals.",
+        "Teams experiencing errors, delays or rework in key processes.",
+        "Organisations that need documented procedures for certification, audit or onboarding."
+      ],
+      "whatWeAssess": [
+        "Current-state process flows and bottlenecks",
+        "Segregation of duties and approval points",
+        "System usage, manual workarounds and data quality",
+        "Existing policies and procedure documentation"
+      ],
+      "outcomes": [
+        "Simplified, future-state process maps",
+        "A practical SOP manual with clear roles, steps and controls",
+        "Implementation and training support for process owners"
+      ],
+      "relatedTools": ["sop-toolkit"]
+    },
+    {
+      "slug": "management-reporting-and-kpi-setup",
+      "name": "Management Reporting & KPI Setup",
+      "shortName": "Reporting & KPIs",
+      "tagline": "Establish meaningful information, indicators and reporting for better decisions.",
+      "summary": "We help you define the few indicators that matter, design a management reporting pack and set up the routines that turn data into timely decisions.",
+      "icon": "bar-chart",
+      "whoItIsFor": [
+        "Leadership teams that receive a lot of data but little insight.",
+        "Organisations introducing performance management for the first time.",
+        "Boards and owners who want a concise, reliable view of the business."
+      ],
+      "whatWeAssess": [
+        "Strategic objectives and the drivers behind them",
+        "Existing reports, data sources and reporting cycles",
+        "Reporting responsibilities and review forums",
+        "Data availability and reliability"
+      ],
+      "outcomes": [
+        "A KPI framework with definitions, targets and owners",
+        "A management reporting pack and dashboard template",
+        "A reporting calendar and review routine"
+      ],
+      "relatedTools": ["kpi-dashboard", "management-reporting-pack"]
+    }
+  ]
+}

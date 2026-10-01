@@ -1,0 +1,35 @@
+import type { Metadata } from "next";
+import { HomeHero } from "@/components/sections/home-hero";
+import { WhoWeAre } from "@/components/sections/who-we-are";
+import { HowWeWork } from "@/components/sections/how-we-work";
+import { ServicesOverview } from "@/components/sections/services-overview";
+import { BusinessLines } from "@/components/sections/business-lines";
+import { InsightsPreview } from "@/components/sections/insights-preview";
+import { CtaBand } from "@/components/sections/cta-band";
+import { JsonLd, organizationJsonLd } from "@/lib/seo";
+import { getInsights, getPillars, getSiteSettings } from "@/lib/content";
+
+export const metadata: Metadata = {
+  title: "Who We Are | Insight.360° – Better Insight. Better Business.",
+  description:
+    "Insight.360° is an independent business advisory practice in Mauritius taking a 360° perspective on performance, governance, risk, internal controls and compliance.",
+  alternates: { canonical: "/" },
+};
+
+export default async function HomePage() {
+  const [settings, pillars, insights] = await Promise.all([getSiteSettings(), getPillars(), getInsights()]);
+  const featured = [...insights].sort((a, b) => Number(b.featured) - Number(a.featured));
+
+  return (
+    <>
+      <JsonLd data={organizationJsonLd(settings)} />
+      <HomeHero descriptor={settings.descriptor} />
+      <WhoWeAre purpose={settings.purpose} />
+      <HowWeWork />
+      <ServicesOverview pillars={pillars} />
+      <BusinessLines />
+      <InsightsPreview insights={featured} />
+      <CtaBand />
+    </>
+  );
+}

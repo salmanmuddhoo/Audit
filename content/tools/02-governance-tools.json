@@ -1,0 +1,14 @@
+{
+  "slug": "governance-tools",
+  "name": "Governance Tools",
+  "order": 2,
+  "description": "Structure for boards, committees and management with clear authority and oversight.",
+  "icon": "landmark",
+  "pillar": "governance",
+  "tools": [
+    { "slug": "governance-checklist", "name": "Governance checklist", "description": "A proportionate checklist to test whether your governance arrangements are fit for purpose.", "status": "coming-soon", "format": "PDF checklist" },
+    { "slug": "board-pack", "name": "Board pack", "description": "A board pack structure and templates for focused, decision-oriented meetings.", "status": "coming-soon", "format": "Word + PowerPoint templates" },
+    { "slug": "delegation-of-authority-toolkit", "name": "Delegation of authority toolkit", "description": "A delegation matrix and policy template to clarify who can decide what.", "status": "coming-soon", "format": "Excel + Word templates" },
+    { "slug": "policy-register", "name": "Policy register", "description": "Track policies, owners, approval and review dates in one place.", "status": "coming-soon", "format": "Excel register" }
+  ]
+}

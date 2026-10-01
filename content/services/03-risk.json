@@ -1,0 +1,83 @@
+{
+  "slug": "risk",
+  "name": "Risk",
+  "order": 3,
+  "strapline": "Understand what could affect your objectives.",
+  "description": "Practical risk management and internal control that helps you anticipate what could go wrong, protect value and respond with confidence.",
+  "icon": "shield",
+  "solutions": [
+    {
+      "slug": "risk-management-setup",
+      "name": "Risk Management Setup",
+      "tagline": "Establish a practical risk framework, register, ownership, treatment and reporting.",
+      "summary": "We design and embed a right-sized risk management framework, from risk appetite and the risk register through to ownership, treatment plans and reporting.",
+      "icon": "shield",
+      "featured": true,
+      "whoItIsFor": [
+        "Organisations introducing structured risk management for the first time.",
+        "Teams with a risk register that is no longer used or trusted.",
+        "Boards that want a clear view of principal risks and how they are managed."
+      ],
+      "whatWeAssess": [
+        "Objectives and the risks that could affect them",
+        "Existing risk identification and assessment practices",
+        "Risk ownership and escalation routes",
+        "Monitoring, indicators and reporting"
+      ],
+      "outcomes": [
+        "A risk management framework and policy",
+        "A populated risk register with ratings, owners and treatment plans",
+        "Risk reporting templates and a review cadence"
+      ],
+      "relatedTools": ["risk-register", "risk-assessment-toolkit", "heat-map", "kri-tracker"]
+    },
+    {
+      "slug": "internal-control-health-check",
+      "name": "Internal Control Health Check",
+      "tagline": "Assess key controls across critical business processes.",
+      "summary": "A focused review of the controls that protect your most important processes, identifying gaps, duplication and opportunities to strengthen or simplify.",
+      "icon": "shield-check",
+      "whoItIsFor": [
+        "Finance and operations leaders seeking assurance over key processes.",
+        "Organisations that have experienced errors, losses or audit findings.",
+        "Businesses scaling quickly where controls have not kept pace."
+      ],
+      "whatWeAssess": [
+        "Control design across revenue, purchasing, payroll, cash and inventory",
+        "Authorisation, reconciliation and review controls",
+        "System access and segregation of duties",
+        "Evidence that controls operate as intended"
+      ],
+      "outcomes": [
+        "A control matrix mapping risks to controls",
+        "Gap analysis with prioritised remediation",
+        "Practical control improvements and monitoring routines"
+      ],
+      "relatedTools": ["internal-control-toolkit"]
+    },
+    {
+      "slug": "fraud-vulnerability-review",
+      "name": "Fraud Vulnerability Review",
+      "tagline": "Identify fraud exposures, control gaps, override risks and preventive measures.",
+      "summary": "A structured assessment of where and how fraud could occur in your organisation, and the preventive and detective measures that reduce the exposure.",
+      "icon": "shield-alert",
+      "whoItIsFor": [
+        "Owners and audit committees who want to understand their fraud exposure.",
+        "Organisations handling cash, inventory or high volumes of payments.",
+        "Businesses that have had a fraud incident or near miss."
+      ],
+      "whatWeAssess": [
+        "Fraud risk scenarios across key processes",
+        "Opportunities for management override",
+        "Preventive and detective controls in place",
+        "Whistle-blowing and response arrangements"
+      ],
+      "outcomes": [
+        "A fraud risk assessment and heat map",
+        "Prioritised preventive measures",
+        "An anti-fraud policy and response plan outline"
+      ],
+      "relatedTools": ["fraud-risk-toolkit"]
+    }
+  ]
+}

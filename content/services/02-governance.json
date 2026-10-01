@@ -1,0 +1,36 @@
+{
+  "slug": "governance",
+  "name": "Governance",
+  "order": 2,
+  "strapline": "Clear accountability. Stronger oversight.",
+  "description": "Governance arrangements proportionate to your organisation, so that decision-making, authority and oversight are clear, documented and working in practice.",
+  "icon": "landmark",
+  "solutions": [
+    {
+      "slug": "governance-health-check",
+      "name": "Governance Health Check",
+      "tagline": "Assess governance structures, responsibilities, authority, policies, oversight and reporting.",
+      "summary": "An independent review of how your organisation is directed and controlled, benchmarked against good practice and sized to your complexity.",
+      "icon": "landmark",
+      "featured": true,
+      "whoItIsFor": [
+        "Boards and committees that want assurance their arrangements are fit for purpose.",
+        "Family and owner-managed businesses formalising their governance.",
+        "Organisations responding to regulator, funder or shareholder expectations."
+      ],
+      "whatWeAssess": [
+        "Board and committee structure, composition and terms of reference",
+        "Delegation of authority and decision rights",
+        "Policy framework and its currency",
+        "Oversight of performance, risk and compliance",
+        "Quality and timeliness of board reporting"
+      ],
+      "outcomes": [
+        "A governance maturity assessment with clear ratings",
+        "Practical recommendations aligned to size and resources",
+        "Template charters, delegation matrix and policy register"
+      ],
+      "relatedTools": ["governance-checklist", "board-pack", "delegation-of-authority-toolkit", "policy-register"]
+    }
+  ]
+}
