@@ -3,6 +3,7 @@ import { Container } from "@/components/ui/container";
 import { ButtonLink } from "@/components/ui/button";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { RingMark } from "@/components/ui/ring-mark";
+import { Typewriter } from "@/components/ui/typewriter";
 import { routes } from "@/config/routes";
 
 const lines = [
@@ -21,7 +22,13 @@ export function HomeHero({ descriptor }: { descriptor: string }) {
         <div className="lg:col-span-7">
           <Eyebrow className="mb-5 animate-fade-up">Business Advisory · Governance · Risk · Compliance</Eyebrow>
           <h1 className="animate-fade-up text-[2.75rem] leading-[1.05] sm:text-6xl lg:text-[4.25rem] [animation-delay:80ms]">
-            A <span className="text-gradient">360° perspective</span> on better business.
+            <Typewriter
+              segments={[
+                { text: "A " },
+                { text: "360° perspective", className: "text-gradient" },
+                { text: " on better business." },
+              ]}
+            />
           </h1>
           <p className="mt-7 max-w-xl animate-fade-up text-lg leading-relaxed text-slate-600 sm:text-xl [animation-delay:160ms]">
             Insight.360° is an independent business advisory practice helping organisations strengthen performance,
@@ -47,7 +54,7 @@ export function HomeHero({ descriptor }: { descriptor: string }) {
 
         <div className="relative mx-auto w-full max-w-md lg:col-span-5 lg:max-w-none">
           <div className="relative aspect-square">
-            <RingMark className="drop-shadow-[0_24px_40px_rgb(7_54_101/0.18)]" />
+            <RingMark direction="anticlockwise" className="drop-shadow-[0_24px_40px_rgb(7_54_101/0.18)]" />
             <div className="absolute inset-[22%] flex flex-col items-center justify-center rounded-full bg-white/90 text-center shadow-card backdrop-blur">
               <span className="font-display text-5xl font-extrabold tracking-tight text-navy-900 sm:text-6xl">360°</span>
               <span className="mt-1 text-xs font-bold tracking-[0.2em] text-teal-600 uppercase">perspective</span>

@@ -2,6 +2,7 @@ import { Container } from "@/components/ui/container";
 import { Card, IconBadge } from "@/components/ui/card";
 import { Icon } from "@/components/ui/icons";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { Walker } from "@/components/ui/walker";
 
 const principles = [
   { name: "Practical", text: "Solutions that work in the real business environment.", icon: "wrench" },
@@ -42,6 +43,7 @@ export function HowWeWork() {
           </div>
           <ol className="relative mt-12 grid gap-6 sm:grid-cols-4 lg:grid-cols-7">
             <div className="absolute top-6 right-[7%] left-[7%] hidden h-0.5 bg-gradient-to-r from-navy-900 via-teal-500 to-mint-500 lg:block" aria-hidden />
+            <Walker className="hidden lg:block" />
             {steps.map((step, i) => (
               <li key={step} className="relative flex items-center gap-4 sm:flex-col sm:text-center">
                 <span className="relative z-10 flex size-12 shrink-0 items-center justify-center rounded-full bg-white font-display text-sm font-extrabold text-navy-900 shadow-card ring-4 ring-navy-50">

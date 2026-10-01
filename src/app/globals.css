@@ -155,3 +155,123 @@
     @apply border-b border-slate-200 px-4 py-3 align-top;
   }
 }
+
+/* ------------------------------------------------------------------
+   Micro-animations: typewriter headline, walking figure
+------------------------------------------------------------------- */
+@layer components {
+  /* Typewriter: letters are revealed by the component; the caret is a
+     pseudo-element on the most recently typed letter. ------------------ */
+  .typewriter .type-current::after {
+    content: "";
+    display: inline-block;
+    width: 0.07em;
+    height: 0.85em;
+    margin-left: 0.06em;
+    vertical-align: -0.04em;
+    border-radius: 1px;
+    background: var(--color-teal-500);
+    animation: type-blink 0.8s step-end infinite;
+  }
+  @keyframes type-blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  /* Walking figure ------------------------------------------------- */
+  .walker-track {
+    position: absolute;
+    top: 1.5rem; /* same vertical position as the pathway line */
+    right: 7%;
+    left: 7%;
+    height: 0;
+    z-index: 20;
+  }
+  .walker {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    animation: walker-path 18s linear infinite;
+  }
+  .walker-figure {
+    position: absolute;
+    bottom: 0.1rem;
+    left: 0;
+    width: 2rem;
+    height: 2.8rem;
+    transform: translateX(-50%);
+    overflow: visible;
+    filter: drop-shadow(0 2px 2px rgb(7 54 101 / 0.25));
+    animation: walker-bob 0.45s ease-in-out infinite alternate;
+  }
+  .walker-leg-f {
+    animation: walker-swing 0.45s ease-in-out infinite alternate;
+  }
+  .walker-leg-b {
+    animation: walker-swing 0.45s ease-in-out infinite alternate-reverse;
+  }
+  .walker-arm-f {
+    animation: walker-swing-arm 0.45s ease-in-out infinite alternate-reverse;
+  }
+  .walker-arm-b {
+    animation: walker-swing-arm 0.45s ease-in-out infinite alternate;
+  }
+  @keyframes walker-path {
+    0% {
+      left: 0%;
+    }
+    4% {
+      left: 0%;
+    }
+    94% {
+      left: 100%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+  @keyframes walker-swing {
+    from {
+      transform: rotate(-28deg);
+    }
+    to {
+      transform: rotate(28deg);
+    }
+  }
+  @keyframes walker-swing-arm {
+    from {
+      transform: rotate(-22deg);
+    }
+    to {
+      transform: rotate(22deg);
+    }
+  }
+  @keyframes walker-bob {
+    from {
+      transform: translateX(-50%) translateY(0);
+    }
+    to {
+      transform: translateX(-50%) translateY(-1.5px);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .walker,
+    .walker-figure,
+    .walker-leg-f,
+    .walker-leg-b,
+    .walker-arm-f,
+    .walker-arm-b {
+      animation: none;
+    }
+    .walker {
+      left: 50%;
+    }
+  }
+}
