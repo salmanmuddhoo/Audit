@@ -4,7 +4,15 @@ import { cn } from "@/lib/utils";
  * Decorative 360° ring echoing the logo mark. Pure SVG so it stays crisp,
  * themeable and weightless.
  */
-export function RingMark({ className, animate = true }: { className?: string; animate?: boolean }) {
+export function RingMark({
+  className,
+  animate = true,
+  direction = "clockwise",
+}: {
+  className?: string;
+  animate?: boolean;
+  direction?: "clockwise" | "anticlockwise";
+}) {
   return (
     <svg
       viewBox="0 0 400 400"
@@ -23,7 +31,7 @@ export function RingMark({ className, animate = true }: { className?: string; an
           <stop offset="1" stopColor="#00afc3" />
         </linearGradient>
       </defs>
-      <g className={cn(animate && "origin-center animate-spin-slow")}>
+      <g className={cn(animate && "origin-center animate-spin-slow", animate && direction === "anticlockwise" && "[animation-direction:reverse]")}>
         <circle cx="200" cy="200" r="168" stroke="url(#ring-a)" strokeWidth="22" strokeLinecap="round" strokeDasharray="640 420" />
         <circle cx="200" cy="200" r="134" stroke="url(#ring-b)" strokeWidth="8" strokeLinecap="round" strokeDasharray="300 560" transform="rotate(140 200 200)" />
         <circle cx="200" cy="200" r="190" stroke="#00afc3" strokeOpacity="0.35" strokeWidth="3" strokeLinecap="round" strokeDasharray="120 1100" transform="rotate(230 200 200)" />
