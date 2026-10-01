@@ -1,0 +1,14 @@
+{
+  "slug": "compliance-and-control-tools",
+  "name": "Compliance & Control Tools",
+  "order": 4,
+  "description": "Keep obligations and controls assigned, evidenced and monitored.",
+  "icon": "clipboard-check",
+  "pillar": "compliance",
+  "tools": [
+    { "slug": "compliance-register", "name": "Compliance register", "description": "Map obligations to owners, evidence and monitoring frequency.", "status": "coming-soon", "format": "Excel register" },
+    { "slug": "internal-control-toolkit", "name": "Internal control toolkit", "description": "A control matrix and testing templates for key business processes.", "status": "coming-soon", "format": "Excel + guide" },
+    { "slug": "fraud-risk-toolkit", "name": "Fraud risk toolkit", "description": "Fraud scenarios, red flags and a prevention checklist.", "status": "coming-soon", "format": "Excel + PDF" },
+    { "slug": "compliance-calendar", "name": "Compliance calendar", "description": "Never miss a filing, renewal or review date again.", "status": "coming-soon", "format": "Excel calendar" }
+  ]
+}

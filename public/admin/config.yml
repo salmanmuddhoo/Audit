@@ -1,0 +1,123 @@
+# Decap CMS configuration – edits are committed to the repository and
+# deployed automatically. See docs/CONTENT.md for setup (GitHub OAuth).
+backend:
+  name: github
+  repo: salmanmuddhoo/Audit
+  branch: main
+  base_url: https://www.insight360.solutions
+  auth_endpoint: api/auth
+
+publish_mode: editorial_workflow
+media_folder: public/uploads
+public_folder: /uploads
+site_url: https://www.insight360.solutions
+logo_url: /brand/insight360-logo.png
+
+collections:
+  - name: insights
+    label: Insights
+    label_singular: Insight
+    folder: content/insights
+    create: true
+    extension: mdx
+    format: frontmatter
+    slug: "{{slug}}"
+    summary: "{{title}} — {{type}} · {{category}}"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Excerpt, name: excerpt, widget: text, hint: "One or two sentences shown in listings and search results." }
+      - { label: Type, name: type, widget: select, options: [{ label: "Article (Read)", value: article }, { label: "Guide (Learn)", value: guide }, { label: "Video (Watch)", value: video }, { label: "Resource (Download)", value: download }] }
+      - { label: Category, name: category, widget: select, options: ["Business Advisory", "Governance", "Risk", "Compliance"] }
+      - { label: Tags, name: tags, widget: list, default: [] }
+      - { label: Publish date, name: date, widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: Author, name: author, widget: string, default: "Insight.360°" }
+      - { label: Featured, name: featured, widget: boolean, default: false }
+      - { label: Draft, name: draft, widget: boolean, default: false }
+      - { label: Video URL, name: videoUrl, widget: string, required: false, hint: "YouTube or Vimeo link (video type only)." }
+      - { label: Resource file, name: resourceUrl, widget: file, required: false, hint: "Download type only." }
+      - { label: Resource button label, name: resourceLabel, widget: string, required: false }
+      - { label: Related services (slugs), name: relatedServices, widget: list, required: false }
+      - { label: Body, name: body, widget: markdown }
+
+  - name: services
+    label: Service pillars
+    label_singular: Pillar
+    folder: content/services
+    create: false
+    extension: json
+    format: json
+    identifier_field: name
+    fields:
+      - { label: Slug, name: slug, widget: string }
+      - { label: Name, name: name, widget: string }
+      - { label: Order, name: order, widget: number }
+      - { label: Strapline, name: strapline, widget: string }
+      - { label: Description, name: description, widget: text }
+      - { label: Icon, name: icon, widget: string }
+      - label: Solutions
+        name: solutions
+        widget: list
+        fields:
+          - { label: Slug, name: slug, widget: string }
+          - { label: Name, name: name, widget: string }
+          - { label: Short name, name: shortName, widget: string, required: false }
+          - { label: Tagline, name: tagline, widget: string }
+          - { label: Summary, name: summary, widget: text }
+          - { label: Icon, name: icon, widget: string }
+          - { label: Featured, name: featured, widget: boolean, default: false }
+          - { label: Who it is for, name: whoItIsFor, widget: list }
+          - { label: What we assess, name: whatWeAssess, widget: list }
+          - { label: Outcomes, name: outcomes, widget: list }
+          - { label: Related tools (slugs), name: relatedTools, widget: list, required: false }
+
+  - name: tools
+    label: Tool collections
+    label_singular: Collection
+    folder: content/tools
+    create: false
+    extension: json
+    format: json
+    identifier_field: name
+    fields:
+      - { label: Slug, name: slug, widget: string }
+      - { label: Name, name: name, widget: string }
+      - { label: Order, name: order, widget: number }
+      - { label: Description, name: description, widget: text }
+      - { label: Icon, name: icon, widget: string }
+      - { label: Pillar, name: pillar, widget: string, required: false }
+      - label: Tools
+        name: tools
+        widget: list
+        fields:
+          - { label: Slug, name: slug, widget: string }
+          - { label: Name, name: name, widget: string }
+          - { label: Description, name: description, widget: text, required: false }
+          - { label: Status, name: status, widget: select, options: [coming-soon, available, retired], default: coming-soon }
+          - { label: Format, name: format, widget: string, required: false }
+
+  - name: settings
+    label: Site settings
+    files:
+      - name: site
+        label: General
+        file: content/site.json
+        fields:
+          - { label: Tagline, name: tagline, widget: string }
+          - { label: Descriptor, name: descriptor, widget: string }
+          - { label: Purpose statement, name: purpose, widget: text }
+          - label: Contact
+            name: contact
+            widget: object
+            fields:
+              - { label: Email, name: email, widget: string }
+              - { label: Phone, name: phone, widget: string, required: false }
+              - { label: Location, name: location, widget: string }
+              - { label: Address line, name: addressLine, widget: string, required: false }
+              - { label: Hours, name: hours, widget: string, required: false }
+          - label: Social links
+            name: social
+            widget: list
+            fields:
+              - { label: Platform, name: platform, widget: select, options: [linkedin, facebook, youtube, x, instagram] }
+              - { label: URL, name: url, widget: string }
+          - { label: Footer note, name: footerNote, widget: string, required: false }

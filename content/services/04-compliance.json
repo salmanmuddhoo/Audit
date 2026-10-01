@@ -1,0 +1,35 @@
+{
+  "slug": "compliance",
+  "name": "Compliance",
+  "order": 4,
+  "strapline": "Know your obligations. Stay in control.",
+  "description": "Clarity on the legal, regulatory and contractual obligations that apply to you, and a practical system to keep them assigned, evidenced and monitored.",
+  "icon": "clipboard-check",
+  "solutions": [
+    {
+      "slug": "compliance-health-check",
+      "name": "Compliance Health Check",
+      "tagline": "Assess how obligations are identified, assigned, evidenced, monitored and reported.",
+      "summary": "An independent review of your compliance arrangements that confirms what applies to you, who owns it and whether you can demonstrate compliance when asked.",
+      "icon": "clipboard-check",
+      "featured": true,
+      "whoItIsFor": [
+        "Organisations in regulated or licensed activities.",
+        "Businesses unsure whether all obligations are known and owned.",
+        "Management teams preparing for inspections, audits or due diligence."
+      ],
+      "whatWeAssess": [
+        "The compliance universe: laws, regulations, licences and contracts",
+        "Ownership and accountability for each obligation",
+        "Evidence, record-keeping and monitoring",
+        "Compliance reporting and escalation of breaches"
+      ],
+      "outcomes": [
+        "A compliance register tailored to your organisation",
+        "A compliance calendar with owners and due dates",
+        "Monitoring and reporting routines that are easy to sustain"
+      ],
+      "relatedTools": ["compliance-register", "compliance-calendar"]
+    }
+  ]
+}

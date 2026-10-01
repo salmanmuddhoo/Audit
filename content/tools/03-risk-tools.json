@@ -1,0 +1,14 @@
+{
+  "slug": "risk-tools",
+  "name": "Risk Tools",
+  "order": 3,
+  "description": "Identify, assess, own and monitor the risks that could affect your objectives.",
+  "icon": "shield",
+  "pillar": "risk",
+  "tools": [
+    { "slug": "risk-register", "name": "Risk register", "description": "A structured register with ratings, owners, treatments and review tracking.", "status": "coming-soon", "format": "Excel register" },
+    { "slug": "risk-assessment-toolkit", "name": "Risk assessment toolkit", "description": "Criteria, scales and workshop materials to assess risks consistently.", "status": "coming-soon", "format": "Excel + Word + guide" },
+    { "slug": "heat-map", "name": "Heat map", "description": "Visualise your risk profile for management and board discussions.", "status": "coming-soon", "format": "Excel template" },
+    { "slug": "kri-tracker", "name": "KRI tracker", "description": "Track key risk indicators and thresholds to spot issues early.", "status": "coming-soon", "format": "Excel tracker" }
+  ]
+}

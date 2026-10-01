@@ -1,0 +1,14 @@
+{
+  "slug": "business-tools",
+  "name": "Business Tools",
+  "order": 1,
+  "description": "Practical tools to understand performance, simplify processes and report what matters.",
+  "icon": "briefcase",
+  "pillar": "business-advisory",
+  "tools": [
+    { "slug": "business-diagnostic", "name": "Business diagnostic", "description": "Self-assessment across strategy, people, process, performance, risk and control.", "status": "coming-soon", "format": "Excel workbook + guide" },
+    { "slug": "kpi-dashboard", "name": "KPI dashboard", "description": "Define, track and visualise the indicators that drive your business.", "status": "coming-soon", "format": "Excel dashboard" },
+    { "slug": "management-reporting-pack", "name": "Management reporting pack", "description": "A ready-to-use monthly reporting pack template for leadership teams.", "status": "coming-soon", "format": "Excel + Word templates" },
+    { "slug": "sop-toolkit", "name": "SOP toolkit", "description": "Templates and worked examples to document practical standard operating procedures.", "status": "coming-soon", "format": "Word templates + guide" }
+  ]
+}

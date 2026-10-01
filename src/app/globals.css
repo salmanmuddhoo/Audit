@@ -1,0 +1,157 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------
+   Insight.360° design tokens
+   Brand palette taken from the company profile:
+   navy #073665 · teal #00AFC3 · slate #5B6573 · tints #EAF7F8 / #F5F8FA
+------------------------------------------------------------------- */
+@theme {
+  --color-navy-950: #041f3d;
+  --color-navy-900: #073665;
+  --color-navy-800: #0a4a84;
+  --color-navy-700: #0d5ea1;
+  --color-navy-100: #dbe7f3;
+  --color-navy-50: #f5f8fa;
+
+  --color-teal-600: #0092a3;
+  --color-teal-500: #00afc3;
+  --color-teal-400: #2ec4d4;
+  --color-teal-100: #d3f1f5;
+  --color-teal-50: #eaf7f8;
+
+  --color-mint-500: #3dbe9e;
+
+  --color-slate-700: #3e4653;
+  --color-slate-600: #5b6573;
+  --color-slate-500: #7a8494;
+  --color-slate-300: #cbd2dc;
+  --color-slate-200: #e3e8ee;
+  --color-slate-100: #f1f4f7;
+
+  --color-brand: var(--color-navy-900);
+  --color-accent: var(--color-teal-500);
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-jakarta), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-card: 0 1px 2px rgb(7 54 101 / 0.04), 0 8px 24px -8px rgb(7 54 101 / 0.12);
+  --shadow-card-hover: 0 2px 4px rgb(7 54 101 / 0.06), 0 20px 40px -12px rgb(7 54 101 / 0.22);
+
+  --radius-xl: 1rem;
+  --radius-2xl: 1.25rem;
+  --radius-3xl: 1.75rem;
+
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-spin-slow: spin 40s linear infinite;
+  --animate-fade-up: fade-up 0.7s ease-out both;
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-white font-sans text-slate-600 antialiased;
+    font-feature-settings: "cv11", "ss01";
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display font-bold tracking-tight text-navy-900;
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  ::selection {
+    background: var(--color-teal-100);
+    color: var(--color-navy-900);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-teal-500);
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background-image: linear-gradient(90deg, var(--color-navy-900), var(--color-teal-500));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, rgb(7 54 101 / 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(7 54 101 / 0.05) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+  .bg-dots {
+    background-image: radial-gradient(rgb(0 175 195 / 0.25) 1px, transparent 1px);
+    background-size: 18px 18px;
+  }
+  .prose-insight {
+    @apply text-[1.0625rem] leading-8 text-slate-600;
+  }
+  .prose-insight h2 {
+    @apply mt-12 mb-4 text-2xl;
+  }
+  .prose-insight h3 {
+    @apply mt-8 mb-3 text-xl;
+  }
+  .prose-insight p {
+    @apply mb-5;
+  }
+  .prose-insight ul {
+    @apply mb-6 list-disc space-y-2 pl-6;
+  }
+  .prose-insight ol {
+    @apply mb-6 list-decimal space-y-2 pl-6;
+  }
+  .prose-insight li::marker {
+    @apply text-teal-500;
+  }
+  .prose-insight strong {
+    @apply font-semibold text-navy-900;
+  }
+  .prose-insight a {
+    @apply font-medium text-teal-600 underline decoration-teal-300 underline-offset-4 hover:text-navy-900;
+  }
+  .prose-insight blockquote {
+    @apply my-8 rounded-2xl border-l-4 border-teal-500 bg-teal-50 px-6 py-5 text-navy-900 italic;
+  }
+  .prose-insight hr {
+    @apply my-10 border-slate-200;
+  }
+  .prose-insight table {
+    @apply my-8 w-full border-collapse text-base;
+  }
+  .prose-insight th {
+    @apply border-b-2 border-navy-100 bg-navy-50 px-4 py-3 text-left font-semibold text-navy-900;
+  }
+  .prose-insight td {
+    @apply border-b border-slate-200 px-4 py-3 align-top;
+  }
+}
