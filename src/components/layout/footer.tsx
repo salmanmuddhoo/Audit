@@ -78,7 +78,7 @@ export async function Footer() {
             <Link href={routes.privacy} className="transition hover:text-teal-400">
               Privacy notice
             </Link>
-            <span className="text-teal-400/80">{settings.tagline}</span>
+            <span className="text-teal-400/80">Developed by Salman (+230 58222428)</span>
           </div>
         </Container>
       </div>
