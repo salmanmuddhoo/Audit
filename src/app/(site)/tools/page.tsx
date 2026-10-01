@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { BookOpen, PlayCircle, FileText, Sparkles } from "lucide-react";
+import { BookOpen, PlayCircle, FileText } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Badge } from "@/components/ui/badge";
 import { Icon } from "@/components/ui/icons";
@@ -7,7 +7,6 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { PageHero } from "@/components/sections/page-hero";
 import { CtaBand } from "@/components/sections/cta-band";
 import { ToolInterestForm } from "@/components/forms/tool-interest-form";
-import { features } from "@/config/site";
 import { routes } from "@/config/routes";
 import { getToolCollections } from "@/lib/content";
 
@@ -26,7 +25,6 @@ const support = [
 
 export default async function ToolsPage() {
   const collections = await getToolCollections();
-  const total = collections.reduce((n, c) => n + c.tools.length, 0);
 
   return (
     <>
@@ -39,20 +37,7 @@ export default async function ToolsPage() {
         }
         description="Insight.360° develops practical business tools that help organisations bring greater structure, visibility and control to the way they work. They complement our advisory services but are designed for practical self-use."
         crumbs={[{ label: "Tools" }]}
-      >
-        {!features.toolsMarketplace ? (
-          <div className="inline-flex flex-wrap items-center gap-3 rounded-2xl border border-amber-200 bg-amber-50 px-5 py-3 text-sm text-amber-800">
-            <Sparkles className="size-4" aria-hidden />
-            <span>
-              <strong>Coming soon.</strong> {total} tools across {collections.length} collections are in development.{" "}
-              <a href="#register-interest" className="font-semibold underline underline-offset-2">
-                Register your interest
-              </a>{" "}
-              to be first to know.
-            </span>
-          </div>
-        ) : null}
-      </PageHero>
+      />
 
       <section className="py-20 sm:py-24">
         <Container>
