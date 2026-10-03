@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/eyebrow";
-import { RingMark } from "@/components/ui/ring-mark";
+import { HeroEmblem } from "@/components/ui/hero-emblem";
 import { cn } from "@/lib/utils";
 
 export function PageHero({
@@ -23,8 +23,15 @@ export function PageHero({
   return (
     <section className={cn("relative overflow-hidden bg-navy-50", className)}>
       <div className="absolute inset-0 bg-grid [mask-image:radial-gradient(ellipse_at_top_right,black,transparent_70%)]" aria-hidden />
-      <div className="pointer-events-none absolute -top-24 -right-24 size-[28rem] opacity-40 sm:size-[34rem]" aria-hidden>
-        <RingMark />
+      {/* Brand emblem: faded and tucked into the corner on narrow screens,
+          fully visible (with its centre label) beside the heading on xl+ */}
+      <div className="pointer-events-none absolute inset-0" aria-hidden>
+        <Container className="relative h-full">
+          <HeroEmblem
+            labelClassName="hidden xl:flex"
+            className="absolute -top-24 -right-24 size-[28rem] opacity-40 sm:size-[34rem] xl:top-10 xl:right-0 xl:size-[22rem] xl:opacity-100"
+          />
+        </Container>
       </div>
       <Container className="relative py-16 sm:py-20 lg:py-24">
         {crumbs.length ? (

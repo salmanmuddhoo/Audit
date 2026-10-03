@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { ButtonLink } from "@/components/ui/button";
-import { RingMark } from "@/components/ui/ring-mark";
+import { HeroEmblem } from "@/components/ui/hero-emblem";
 import { Header } from "@/components/layout/header";
 import { primaryNav } from "@/config/routes";
 
@@ -10,9 +10,10 @@ export default function NotFound() {
     <>
       <Header />
       <main className="relative flex flex-1 items-center overflow-hidden bg-navy-50">
-        <div className="pointer-events-none absolute -right-32 -bottom-32 size-[30rem] opacity-40" aria-hidden>
-          <RingMark />
-        </div>
+        <HeroEmblem
+          labelClassName="hidden xl:flex"
+          className="pointer-events-none absolute -right-32 -bottom-32 size-[30rem] opacity-40 xl:right-8 xl:bottom-8 xl:size-[24rem] xl:opacity-100"
+        />
         <Container className="relative py-24 text-center">
           <p className="text-xs font-bold tracking-[0.2em] text-teal-600 uppercase">404</p>
           <h1 className="mt-3 text-4xl sm:text-5xl">We couldn’t find that page.</h1>
