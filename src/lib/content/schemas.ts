@@ -15,6 +15,7 @@ export const siteSettingsSchema = z.object({
   contact: z.object({
     email: z.string().email(),
     phone: z.string().optional(),
+    whatsapp: z.string().optional(),
     location: z.string(),
     addressLine: z.string().optional(),
     hours: z.string().optional(),

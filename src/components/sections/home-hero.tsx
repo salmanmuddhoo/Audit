@@ -3,6 +3,7 @@ import { Container } from "@/components/ui/container";
 import { ButtonLink } from "@/components/ui/button";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { HeroEmblem } from "@/components/ui/hero-emblem";
+import { WhatsappIcon } from "@/components/ui/brand-icons";
 import { Typewriter } from "@/components/ui/typewriter";
 import { routes } from "@/config/routes";
 
@@ -38,7 +39,8 @@ export function HomeHero({ descriptor }: { descriptor: string }) {
             <ButtonLink href={routes.services} size="lg" arrow>
               Explore our services
             </ButtonLink>
-            <ButtonLink href={routes.contact} variant="outline" size="lg">
+            <ButtonLink href={routes.whatsapp()} variant="outline" size="lg">
+              <WhatsappIcon className="size-5 text-[#25D366]" />
               Talk to us
             </ButtonLink>
           </div>

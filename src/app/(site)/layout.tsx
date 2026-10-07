@@ -1,6 +1,7 @@
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import { TopBar } from "@/components/layout/top-bar";
+import { WhatsappFloat } from "@/components/layout/whatsapp-float";
 import { getPillars, getSiteSettings } from "@/lib/content";
 import { JsonLd, organizationJsonLd, websiteJsonLd } from "@/lib/seo";
 
@@ -22,6 +23,7 @@ export default async function SiteLayout({ children }: { children: React.ReactNo
         {children}
       </main>
       <Footer />
+      <WhatsappFloat />
     </>
   );
 }

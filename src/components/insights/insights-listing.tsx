@@ -140,9 +140,9 @@ export function InsightsListing({
                 Our content helps organisations recognise issues, understand good practice, apply practical tools and know when
                 specialist support may be useful.
               </p>
-              <Link href={routes.contact} className="mt-4 inline-block text-sm font-semibold text-teal-400 hover:text-white">
-                Talk to us →
-              </Link>
+              <a href={routes.whatsapp()} target="_blank" rel="noopener noreferrer" className="mt-4 inline-block text-sm font-semibold text-teal-400 hover:text-white">
+                Talk to us on WhatsApp →
+              </a>
             </div>
           </aside>
         </div>

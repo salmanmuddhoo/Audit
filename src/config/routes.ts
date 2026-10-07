@@ -1,4 +1,5 @@
 import type { Route } from "next";
+import { siteConfig } from "./site";
 
 export type NavItem = {
   label: string;
@@ -27,4 +28,7 @@ export const routes = {
   contact: "/contact" as Route,
   contactFor: (service: string) => `/contact?service=${encodeURIComponent(service)}` as Route,
   privacy: "/privacy" as Route,
+  /** Opens a WhatsApp chat with the practice, with an optional pre-filled message. */
+  whatsapp: (message = "Hello Insight.360°, I would like to talk about my business.") =>
+    `https://wa.me/${siteConfig.whatsapp.digits}?text=${encodeURIComponent(message)}`,
 };

@@ -2,12 +2,13 @@ import { Container } from "@/components/ui/container";
 import { ButtonLink } from "@/components/ui/button";
 import { RingMark } from "@/components/ui/ring-mark";
 import { routes } from "@/config/routes";
+import { WhatsappIcon } from "@/components/ui/brand-icons";
 
 export function CtaBand({
   title = "Let’s talk about your business.",
   description = "Whether you are looking to strengthen operations, governance, risk management, internal controls or compliance, we would be pleased to understand your requirements.",
   primaryLabel = "Start a conversation",
-  primaryHref = routes.contact,
+  primaryHref = routes.whatsapp(),
   secondaryLabel,
   secondaryHref,
 }: {
@@ -31,6 +32,7 @@ export function CtaBand({
         </div>
         <div className="flex flex-wrap gap-3 lg:justify-end">
           <ButtonLink href={primaryHref} variant="accent" size="lg" arrow>
+            {primaryHref.startsWith("https://wa.me/") ? <WhatsappIcon className="size-5" /> : null}
             {primaryLabel}
           </ButtonLink>
           {secondaryLabel && secondaryHref ? (

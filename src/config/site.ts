@@ -12,6 +12,8 @@ export const siteConfig = {
     "Insight.360° is an independent business advisory practice in Mauritius helping organisations strengthen performance, governance, risk management, internal controls and compliance.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.insight360.solutions",
   locale: "en_MU",
+  /** Business WhatsApp used by the "talk to us" calls to action. */
+  whatsapp: { display: "+230 5250 7977", digits: "23052507977" },
   keywords: [
     "business advisory Mauritius",
     "governance",
