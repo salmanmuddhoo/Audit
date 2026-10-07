@@ -18,6 +18,8 @@ The site is a standard Next.js application and deploys unchanged to **Vercel**
 | `RESEND_API_KEY` | yes (prod) | Email delivery for the contact and tools-interest forms |
 | `MAIL_FROM` | yes (prod) | Verified sender, e.g. `Insight.360° Website <website@insight360.solutions>` |
 | `MAIL_TO` | yes (prod) | Destination inbox (comma-separated for several) |
+| `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` | no | Google Search Console ownership token |
+| `NEXT_PUBLIC_BING_SITE_VERIFICATION` | no | Bing Webmaster Tools ownership token |
 | `NEXT_PUBLIC_FEATURE_MARKETPLACE` | no | `true` when Stage 2 launches |
 | `NEXT_PUBLIC_FEATURE_CLIENT_PLATFORM` | no | `true` when Stage 3 launches |
 
@@ -58,5 +60,7 @@ Verify the domain in Resend (DKIM + return-path records) before go-live.
 - [ ] Review `/privacy` with a data-protection lens (Mauritius DPA 2017)
 - [ ] Set `videoUrl` on video insights once published
 - [ ] Confirm `NEXT_PUBLIC_SITE_URL` and test `/sitemap.xml`, `/robots.txt`
-- [ ] Submit the sitemap in Google Search Console
+- [ ] Submit the sitemap in Google Search Console and Bing Webmaster Tools
+- [ ] Create the Google Business Profile (see `docs/SEO.md`)
+- [ ] Check `/llms.txt`, `/feed.xml` and run the Rich Results Test
 - [ ] Send a test enquiry and a test tools-interest registration

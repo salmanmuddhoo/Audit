@@ -4,6 +4,7 @@ import { InsightsHero } from "@/components/insights/insights-hero";
 import { InsightsListing } from "@/components/insights/insights-listing";
 import { CtaBand } from "@/components/sections/cta-band";
 import { getInsightCategories, getInsightTags, insightTypeSchema, queryInsights } from "@/lib/content";
+import { pageAlternates } from "@/lib/seo";
 
 type Props = { params: Promise<{ category: string }>; searchParams: Promise<{ type?: string }> };
 
@@ -19,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${match.name} insights`,
     description: `Articles, guides, videos and resources from Insight.360° on ${match.name.toLowerCase()}.`,
-    alternates: { canonical: `/insights/category/${category}` },
+    alternates: pageAlternates(`/insights/category/${category}`),
   };
 }
 

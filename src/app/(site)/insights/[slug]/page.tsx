@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Calendar, Clock, Download, User } from "lucide-react";
+import { ArrowLeft, Calendar, CheckCircle2, Clock, Download, User } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Badge } from "@/components/ui/badge";
 import { ButtonLink } from "@/components/ui/button";
@@ -14,7 +14,7 @@ import { CtaBand } from "@/components/sections/cta-band";
 import { routes } from "@/config/routes";
 import { siteConfig } from "@/config/site";
 import { getAllSolutions, getInsight, getInsights, getRelatedInsights, insightTypeMeta } from "@/lib/content";
-import { JsonLd, articleJsonLd, breadcrumbJsonLd } from "@/lib/seo";
+import { JsonLd, articleJsonLd, breadcrumbJsonLd, pageAlternates } from "@/lib/seo";
 import { formatDate } from "@/lib/utils";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: insight.title,
     description: insight.excerpt,
-    alternates: { canonical: `/insights/${insight.slug}` },
+    alternates: pageAlternates(`/insights/${insight.slug}`),
     openGraph: {
       type: "article",
       title: insight.title,
@@ -83,7 +83,7 @@ export default async function InsightPage({ params }: Props) {
               </Link>
             </div>
             <h1 className="mt-5 text-3xl leading-[1.12] sm:text-4xl lg:text-5xl">{insight.title}</h1>
-            <p className="mt-5 text-lg leading-relaxed text-slate-600 sm:text-xl">{insight.excerpt}</p>
+            <p className="insight-summary mt-5 text-lg leading-relaxed text-slate-600 sm:text-xl">{insight.excerpt}</p>
             <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-500">
               <span className="inline-flex items-center gap-2">
                 <User className="size-4 text-teal-500" aria-hidden />
@@ -102,6 +102,22 @@ export default async function InsightPage({ params }: Props) {
         </header>
 
         <Container size="narrow" className="py-12 sm:py-16">
+          {insight.keyTakeaways.length ? (
+            <aside className="insight-takeaways mb-10 rounded-3xl border border-navy-100 bg-navy-50 p-7" aria-labelledby="key-takeaways">
+              <h2 id="key-takeaways" className="text-xs font-bold tracking-[0.18em] text-teal-600 uppercase">
+                Key takeaways
+              </h2>
+              <ul className="mt-4 space-y-3">
+                {insight.keyTakeaways.map((t) => (
+                  <li key={t} className="flex items-start gap-3 text-navy-900">
+                    <CheckCircle2 className="mt-1 size-4 shrink-0 text-teal-500" aria-hidden />
+                    <span>{t}</span>
+                  </li>
+                ))}
+              </ul>
+            </aside>
+          ) : null}
+
           {insight.type === "video" ? (
             <div className="mb-10">
               <VideoEmbed url={insight.videoUrl} title={insight.title} />

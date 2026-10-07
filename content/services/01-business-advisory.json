@@ -32,7 +32,23 @@
         "A prioritised improvement roadmap with owners and timelines",
         "Quick wins that can be implemented immediately"
       ],
-      "relatedTools": ["business-diagnostic"]
+      "relatedTools": [
+        "business-diagnostic"
+      ],
+      "faq": [
+        {
+          "question": "How long does a Business 360° Diagnostic take?",
+          "answer": "Typically three to six weeks depending on the size and complexity of the organisation, covering interviews, document review, analysis and a prioritised report."
+        },
+        {
+          "question": "What do we receive at the end?",
+          "answer": "A diagnostic report with findings rated by impact and urgency, a prioritised improvement roadmap with owners and timelines, and a list of quick wins you can implement immediately."
+        },
+        {
+          "question": "Is the diagnostic only for businesses with problems?",
+          "answer": "No. Many clients commission it before growth, investment, restructuring or a change of leadership to get an objective baseline of how the whole organisation performs."
+        }
+      ]
     },
     {
       "slug": "process-and-sop-transformation",
@@ -57,7 +73,23 @@
         "A practical SOP manual with clear roles, steps and controls",
         "Implementation and training support for process owners"
       ],
-      "relatedTools": ["sop-toolkit"]
+      "relatedTools": [
+        "sop-toolkit"
+      ],
+      "faq": [
+        {
+          "question": "Do you document our existing processes or redesign them?",
+          "answer": "Both. We map how work actually happens today, remove duplication and weak points, and then document the improved process as practical Standard Operating Procedures."
+        },
+        {
+          "question": "Which processes should we start with?",
+          "answer": "Usually those where errors, delays, rework or dependence on one person cost the most, typically order-to-cash, purchase-to-pay, payroll and customer service."
+        },
+        {
+          "question": "Will staff actually use the SOPs?",
+          "answer": "We write them with the process owners in plain language, keep them short, and include training and a review routine so they stay current and in use."
+        }
+      ]
     },
     {
       "slug": "management-reporting-and-kpi-setup",
@@ -82,7 +114,24 @@
         "A management reporting pack and dashboard template",
         "A reporting calendar and review routine"
       ],
-      "relatedTools": ["kpi-dashboard", "management-reporting-pack"]
+      "relatedTools": [
+        "kpi-dashboard",
+        "management-reporting-pack"
+      ],
+      "faq": [
+        {
+          "question": "How many KPIs should a business track?",
+          "answer": "Three to five per critical area is usually enough. Each needs a definition, a data source, an owner and a target, and it should lead to a decision when it moves."
+        },
+        {
+          "question": "Do we need new software for management reporting?",
+          "answer": "Not usually. Most reporting packs and dashboards start in Excel or your existing systems. The priority is choosing the right indicators and building a review routine."
+        },
+        {
+          "question": "What is the difference between a report and a KPI?",
+          "answer": "A report presents information. A KPI is an agreed indicator with a target that tells management whether the organisation is on track and where to intervene."
+        }
+      ]
     }
   ]
 }

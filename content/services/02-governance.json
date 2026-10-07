@@ -30,7 +30,26 @@
         "Practical recommendations aligned to size and resources",
         "Template charters, delegation matrix and policy register"
       ],
-      "relatedTools": ["governance-checklist", "board-pack", "delegation-of-authority-toolkit", "policy-register"]
+      "relatedTools": [
+        "governance-checklist",
+        "board-pack",
+        "delegation-of-authority-toolkit",
+        "policy-register"
+      ],
+      "faq": [
+        {
+          "question": "We are an owner-managed company. Do we really need governance?",
+          "answer": "Yes, proportionately. Clear roles, a delegation of authority matrix, a few short policies and structured oversight make a business easier to run, finance and eventually hand over."
+        },
+        {
+          "question": "What does the governance health check assess?",
+          "answer": "Board and committee structure, delegation of authority and decision rights, the policy framework, oversight of performance, risk and compliance, and the quality of board reporting."
+        },
+        {
+          "question": "How long does a governance health check take?",
+          "answer": "Usually two to four weeks, including document review, interviews and a report with a maturity rating and practical recommendations sized to your organisation."
+        }
+      ]
     }
   ]
 }

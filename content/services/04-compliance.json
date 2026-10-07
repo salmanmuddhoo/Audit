@@ -29,7 +29,24 @@
         "A compliance calendar with owners and due dates",
         "Monitoring and reporting routines that are easy to sustain"
       ],
-      "relatedTools": ["compliance-register", "compliance-calendar"]
+      "relatedTools": [
+        "compliance-register",
+        "compliance-calendar"
+      ],
+      "faq": [
+        {
+          "question": "What is a compliance register?",
+          "answer": "A single list of the laws, regulations, licences, permits and contractual obligations that apply to your organisation, each with an owner, the evidence held and a monitoring frequency."
+        },
+        {
+          "question": "Which obligations does the compliance health check cover?",
+          "answer": "Company law, tax, employment, data protection, licensing and sector regulation applicable in Mauritius, together with key contractual commitments to customers, lenders and landlords."
+        },
+        {
+          "question": "How do we keep compliance up to date after the review?",
+          "answer": "With a compliance calendar of recurring deadlines, named owners, a periodic monitoring check and a short compliance report to management or the board."
+        }
+      ]
     }
   ]
 }

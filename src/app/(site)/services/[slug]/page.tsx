@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { CheckCircle2, Search, Sparkles, Users } from "lucide-react";
+import { CheckCircle2, HelpCircle, Search, Sparkles, Users } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { ButtonLink } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icons";
@@ -11,7 +11,7 @@ import { CtaBand } from "@/components/sections/cta-band";
 import { InsightCard } from "@/components/insights/insight-card";
 import { routes } from "@/config/routes";
 import { getAllSolutions, getAllTools, getInsights, getSolution } from "@/lib/content";
-import { JsonLd, breadcrumbJsonLd, serviceJsonLd } from "@/lib/seo";
+import { JsonLd, breadcrumbJsonLd, faqJsonLd, pageAlternates, serviceJsonLd, webPageJsonLd } from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${solution.name} | ${solution.pillar.name}`,
     description: solution.summary,
-    alternates: { canonical: `/services/${solution.slug}` },
+    alternates: pageAlternates(`/services/${solution.slug}`),
   };
 }
 
@@ -46,6 +46,8 @@ export default async function SolutionPage({ params }: Props) {
   return (
     <>
       <JsonLd data={serviceJsonLd(solution)} />
+      <JsonLd data={webPageJsonLd({ type: "ItemPage", path: `/services/${solution.slug}`, name: solution.name, description: solution.summary })} />
+      {solution.faq.length ? <JsonLd data={faqJsonLd(solution.faq)} /> : null}
       <JsonLd
         data={breadcrumbJsonLd([
           { name: "Services", path: "/services" },
@@ -124,6 +126,28 @@ export default async function SolutionPage({ params }: Props) {
                     </li>
                   ))}
                 </ul>
+              </div>
+            ) : null}
+
+            {solution.faq.length ? (
+              <div>
+                <h2 className="flex items-center gap-3 text-2xl">
+                  <HelpCircle className="size-6 text-teal-500" aria-hidden />
+                  Frequently asked questions
+                </h2>
+                <div className="mt-5 divide-y divide-slate-200 rounded-2xl border border-slate-200/80 bg-white shadow-card">
+                  {solution.faq.map((item, i) => (
+                    <details key={item.question} className="group px-6 py-4" open={i === 0}>
+                      <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-navy-900 [&::-webkit-details-marker]:hidden">
+                        <span>{item.question}</span>
+                        <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-teal-50 text-teal-600 transition group-open:rotate-45" aria-hidden>
+                          +
+                        </span>
+                      </summary>
+                      <p className="mt-3 leading-relaxed text-slate-600">{item.answer}</p>
+                    </details>
+                  ))}
+                </div>
               </div>
             ) : null}
 

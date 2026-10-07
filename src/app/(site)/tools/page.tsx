@@ -9,12 +9,13 @@ import { CtaBand } from "@/components/sections/cta-band";
 import { ToolInterestForm } from "@/components/forms/tool-interest-form";
 import { routes } from "@/config/routes";
 import { getToolCollections } from "@/lib/content";
+import { JsonLd, abs, breadcrumbJsonLd, itemListJsonLd, pageAlternates, webPageJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Tools – Practical business, governance, risk and compliance toolkits",
   description:
     "Insight.360° develops practical business tools: diagnostics, KPI dashboards, SOP toolkits, risk registers, compliance calendars and more. Register your interest ahead of launch.",
-  alternates: { canonical: "/tools" },
+  alternates: pageAlternates("/tools"),
 };
 
 const support = [
@@ -28,6 +29,14 @@ export default async function ToolsPage() {
 
   return (
     <>
+      <JsonLd data={webPageJsonLd({ type: "CollectionPage", path: "/tools", name: "Tools", description: metadata.description as string })} />
+      <JsonLd data={breadcrumbJsonLd([{ name: "Tools", path: "/tools" }])} />
+      <JsonLd
+        data={itemListJsonLd(
+          "Insight.360° tool collections",
+          collections.map((c) => ({ name: c.name, url: abs(`/tools#${c.slug}`), description: c.description })),
+        )}
+      />
       <PageHero
         eyebrow="03 · Tools"
         title={
