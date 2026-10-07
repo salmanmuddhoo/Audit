@@ -122,7 +122,6 @@ export default async function ServicesPage() {
         title="Not sure where to start?"
         description="A Business 360° Diagnostic gives you an independent view of the whole organisation and a prioritised list of improvements. Or simply tell us the challenge and we will suggest the right starting point."
         primaryLabel="Discuss your requirements"
-        primaryHref={routes.contact}
         secondaryLabel="Our tools"
         secondaryHref={routes.tools}
       />
