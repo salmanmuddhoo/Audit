@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Mail, MapPin, Clock } from "lucide-react";
+import { WhatsappIcon } from "@/components/ui/brand-icons";
 import { Container } from "@/components/ui/container";
 import { primaryNav, routes } from "@/config/routes";
 import { getPillars, getSiteSettings } from "@/lib/content";
@@ -57,6 +58,14 @@ export async function Footer() {
                 {settings.contact.email}
               </a>
             </li>
+            {settings.contact.whatsapp ? (
+              <li className="flex items-start gap-3">
+                <WhatsappIcon className="mt-0.5 size-4 shrink-0 text-teal-400" />
+                <a href={routes.whatsapp()} target="_blank" rel="noopener noreferrer" className="transition hover:text-teal-400">
+                  {settings.contact.whatsapp} (WhatsApp)
+                </a>
+              </li>
+            ) : null}
             <li className="flex items-start gap-3">
               <MapPin className="mt-0.5 size-4 shrink-0 text-teal-400" aria-hidden />
               <span>{settings.contact.addressLine ?? settings.contact.location}</span>

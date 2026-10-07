@@ -119,6 +119,7 @@ collections:
             fields:
               - { label: Email, name: email, widget: string }
               - { label: Phone, name: phone, widget: string, required: false }
+              - { label: WhatsApp, name: whatsapp, widget: string, required: false }
               - { label: Location, name: location, widget: string }
               - { label: Address line, name: addressLine, widget: string, required: false }
               - { label: Hours, name: hours, widget: string, required: false }

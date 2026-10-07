@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Calendar, CheckCircle2, Clock, Download, User } from "lucide-react";
 import { Container } from "@/components/ui/container";
+import { WhatsappIcon } from "@/components/ui/brand-icons";
 import { Badge } from "@/components/ui/badge";
 import { ButtonLink } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icons";
@@ -185,7 +186,8 @@ export default async function InsightPage({ params }: Props) {
                   </li>
                 ))}
               </ul>
-              <ButtonLink href={routes.contact} variant="accent" size="sm" className="mt-6" arrow>
+              <ButtonLink href={routes.whatsapp()} variant="accent" size="sm" className="mt-6" arrow>
+                <WhatsappIcon className="size-4" />
                 Talk to us
               </ButtonLink>
             </aside>
