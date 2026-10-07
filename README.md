@@ -19,7 +19,7 @@ Website FRD, and is structured so that **Stage 2 (Tools Marketplace)** and
 | Content | Git-based: JSON + MDX in `/content`, validated with zod, read through `src/lib/content` |
 | Editing UI | [Decap CMS](https://decapcms.org) at `/admin` (optional, see `docs/CONTENT.md`) |
 | Forms | Route handlers (`/api/contact`, `/api/tool-interest`) with zod validation, honeypot, rate-limit and email via Resend |
-| SEO | Metadata API, `sitemap.xml`, `robots.txt`, Open Graph images, JSON-LD |
+| SEO / GEO | Metadata API, `sitemap.xml`, `robots.txt` (AI crawlers allowed), Open Graph images, rich JSON-LD graph, FAQ schema, RSS feed, `llms.txt`; see [`docs/SEO.md`](docs/SEO.md) |
 | Fonts | Self-hosted Inter + Plus Jakarta Sans (no third-party requests) |
 
 ## Pages (Stage 1)
@@ -80,6 +80,13 @@ src/
 Everything a non-developer needs to change lives in `/content`. See
 [`docs/CONTENT.md`](docs/CONTENT.md) for the field reference and how to add an insight,
 a tool or update contact details, either by editing files or through the `/admin` UI.
+
+## SEO and GEO
+
+The site ships with structured data on every page, FAQ schema on services, an RSS feed and
+`llms.txt` for AI answer engines, plus geographic signals for Mauritius.
+[`docs/SEO.md`](docs/SEO.md) lists what is in place, the launch checklist (Search Console,
+Bing, Google Business Profile) and how to keep new content optimised.
 
 ## Deployment
 

@@ -27,6 +27,12 @@ export type SiteSettings = z.infer<typeof siteSettingsSchema>;
 /* ------------------------------------------------------------------ */
 /*  Services: pillars → solutions (content/services/*.json)            */
 /* ------------------------------------------------------------------ */
+export const faqItemSchema = z.object({
+  question: z.string(),
+  answer: z.string(),
+});
+export type FaqItem = z.infer<typeof faqItemSchema>;
+
 export const solutionSchema = z.object({
   slug: z.string(),
   name: z.string(),
@@ -38,6 +44,8 @@ export const solutionSchema = z.object({
   whatWeAssess: z.array(z.string()).default([]),
   outcomes: z.array(z.string()).default([]),
   relatedTools: z.array(z.string()).default([]),
+  /** Short Q&As shown on the solution page and emitted as FAQPage schema. */
+  faq: z.array(faqItemSchema).default([]),
   featured: z.boolean().default(false),
 });
 export type Solution = z.infer<typeof solutionSchema>;
@@ -115,6 +123,8 @@ export const insightFrontmatterSchema = z.object({
   resourceUrl: z.string().optional(),
   resourceLabel: z.string().optional(),
   relatedServices: z.array(z.string()).default([]),
+  /** Three or so one-line takeaways shown at the top; easy for readers and answer engines to quote. */
+  keyTakeaways: z.array(z.string()).default([]),
 });
 export type InsightFrontmatter = z.infer<typeof insightFrontmatterSchema>;
 

@@ -3,12 +3,13 @@ import { InsightsHero } from "@/components/insights/insights-hero";
 import { InsightsListing } from "@/components/insights/insights-listing";
 import { CtaBand } from "@/components/sections/cta-band";
 import { getInsightCategories, getInsightTags, insightTypeSchema, queryInsights } from "@/lib/content";
+import { JsonLd, abs, breadcrumbJsonLd, itemListJsonLd, pageAlternates, webPageJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Insights – Articles, guides, videos and resources",
   description:
     "Insight.360° Insights translates business, governance, risk and compliance topics into clear, useful and practical content: watch, read, learn and download.",
-  alternates: { canonical: "/insights" },
+  alternates: pageAlternates("/insights"),
 };
 
 type Props = { searchParams: Promise<{ type?: string }> };
@@ -26,6 +27,14 @@ export default async function InsightsPage({ searchParams }: Props) {
 
   return (
     <>
+      <JsonLd data={webPageJsonLd({ type: "CollectionPage", path: "/insights", name: "Insights", description: metadata.description as string })} />
+      <JsonLd data={breadcrumbJsonLd([{ name: "Insights", path: "/insights" }])} />
+      <JsonLd
+        data={itemListJsonLd(
+          "Insight.360° Insights",
+          insights.slice(0, 50).map((i) => ({ name: i.title, url: abs(`/insights/${i.slug}`), description: i.excerpt })),
+        )}
+      />
       <InsightsHero
         title={
           <>

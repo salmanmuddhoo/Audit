@@ -10,19 +10,29 @@ import { CtaBand } from "@/components/sections/cta-band";
 import { routes } from "@/config/routes";
 import { getPillars } from "@/lib/content";
 import { cn } from "@/lib/utils";
+import { JsonLd, abs, breadcrumbJsonLd, itemListJsonLd, pageAlternates, webPageJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Services – Business Advisory, Governance, Risk & Compliance",
   description:
     "Eight focused advisory solutions across four connected pillars: Business Advisory, Governance, Risk and Compliance. Professional advice, practical improvement.",
-  alternates: { canonical: "/services" },
+  alternates: pageAlternates("/services"),
 };
 
 export default async function ServicesPage() {
   const pillars = await getPillars();
+  const solutions = pillars.flatMap((p) => p.solutions);
 
   return (
     <>
+      <JsonLd data={webPageJsonLd({ type: "CollectionPage", path: "/services", name: "Services", description: metadata.description as string })} />
+      <JsonLd data={breadcrumbJsonLd([{ name: "Services", path: "/services" }])} />
+      <JsonLd
+        data={itemListJsonLd(
+          "Insight.360° advisory solutions",
+          solutions.map((s) => ({ name: s.name, url: abs(`/services/${s.slug}`), description: s.tagline })),
+        )}
+      />
       <PageHero
         eyebrow="02 · Services"
         title={

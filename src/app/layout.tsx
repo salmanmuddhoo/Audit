@@ -43,8 +43,27 @@ export const metadata: Metadata = {
     title: `${siteConfig.name} | ${siteConfig.tagline}`,
     description: siteConfig.description,
   },
-  robots: { index: true, follow: true },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 },
+  },
   icons: { icon: "/icon", apple: "/apple-icon" },
+  manifest: "/manifest.webmanifest",
+  category: "business",
+  // Search Console / Bing Webmaster ownership tokens, set per environment.
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+    ...(process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION
+      ? { other: { "msvalidate.01": process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION } }
+      : {}),
+  },
+  // Geographic targeting hints for the Mauritius market.
+  other: {
+    "geo.region": "MU",
+    "geo.placename": "Mauritius",
+    "content-language": "en",
+  },
 };
 
 export const viewport: Viewport = {

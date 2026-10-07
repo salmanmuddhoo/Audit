@@ -5,12 +5,13 @@ import { SocialLinks } from "@/components/layout/social-links";
 import { ContactForm, type EnquiryOption } from "@/components/forms/contact-form";
 import { PageHero } from "@/components/sections/page-hero";
 import { getPillars, getSiteSettings } from "@/lib/content";
+import { JsonLd, breadcrumbJsonLd, pageAlternates, webPageJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Contact us – Let’s talk about your business",
   description:
     "Get in touch with Insight.360° in Mauritius about business advisory, governance, risk management, internal controls or compliance.",
-  alternates: { canonical: "/contact" },
+  alternates: pageAlternates("/contact"),
 };
 
 type Props = { searchParams: Promise<{ service?: string }> };
@@ -35,6 +36,8 @@ export default async function ContactPage({ searchParams }: Props) {
 
   return (
     <>
+      <JsonLd data={webPageJsonLd({ type: "ContactPage", path: "/contact", name: "Contact us", description: metadata.description as string })} />
+      <JsonLd data={breadcrumbJsonLd([{ name: "Contact", path: "/contact" }])} />
       <PageHero
         eyebrow="06 · Contact us"
         title={

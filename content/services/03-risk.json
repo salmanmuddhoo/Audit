@@ -29,7 +29,26 @@
         "A populated risk register with ratings, owners and treatment plans",
         "Risk reporting templates and a review cadence"
       ],
-      "relatedTools": ["risk-register", "risk-assessment-toolkit", "heat-map", "kri-tracker"]
+      "relatedTools": [
+        "risk-register",
+        "risk-assessment-toolkit",
+        "heat-map",
+        "kri-tracker"
+      ],
+      "faq": [
+        {
+          "question": "What is a risk register?",
+          "answer": "A structured list of the risks that could affect your objectives, each with a likelihood and impact rating, a named owner, treatment actions and a review date."
+        },
+        {
+          "question": "How many risks should a register contain?",
+          "answer": "For most organisations 15 to 30 well-defined risks linked to objectives, rather than hundreds of generic entries copied from a template."
+        },
+        {
+          "question": "How often should risks be reviewed?",
+          "answer": "Owners update their risks and indicators monthly, management reviews the top risks quarterly, and the board or owners revisit risk appetite and the full register annually."
+        }
+      ]
     },
     {
       "slug": "internal-control-health-check",
@@ -53,7 +72,23 @@
         "Gap analysis with prioritised remediation",
         "Practical control improvements and monitoring routines"
       ],
-      "relatedTools": ["internal-control-toolkit"]
+      "relatedTools": [
+        "internal-control-toolkit"
+      ],
+      "faq": [
+        {
+          "question": "Which processes does the internal control review cover?",
+          "answer": "Typically revenue, purchasing, payroll, cash and inventory, plus any process where errors, losses or audit findings have occurred."
+        },
+        {
+          "question": "Is this the same as an external audit?",
+          "answer": "No. An external audit gives an opinion on the financial statements. This review assesses whether your day-to-day controls are well designed and operating, and how to strengthen or simplify them."
+        },
+        {
+          "question": "What do we receive from an internal control health check?",
+          "answer": "A control matrix mapping risks to controls, a gap analysis with prioritised remediation, and practical monitoring routines your team can sustain."
+        }
+      ]
     },
     {
       "slug": "fraud-vulnerability-review",
@@ -77,7 +112,23 @@
         "Prioritised preventive measures",
         "An anti-fraud policy and response plan outline"
       ],
-      "relatedTools": ["fraud-risk-toolkit"]
+      "relatedTools": [
+        "fraud-risk-toolkit"
+      ],
+      "faq": [
+        {
+          "question": "What are the most common fraud exposures in smaller organisations?",
+          "answer": "Changes to supplier bank details, unreviewed payroll, cash handling, and one person being able to complete a transaction from start to finish without independent review."
+        },
+        {
+          "question": "Do you investigate suspected fraud?",
+          "answer": "The review is preventive: it identifies exposures and control gaps before a loss occurs. If an incident is suspected, we advise on the appropriate response and investigation approach."
+        },
+        {
+          "question": "Is a fraud vulnerability review confidential?",
+          "answer": "Yes. Fieldwork is discreet, reporting goes to the owners or audit committee, and findings are handled with strict confidentiality."
+        }
+      ]
     }
   ]
 }

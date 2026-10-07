@@ -37,6 +37,7 @@ collections:
       - { label: Resource file, name: resourceUrl, widget: file, required: false, hint: "Download type only." }
       - { label: Resource button label, name: resourceLabel, widget: string, required: false }
       - { label: Related services (slugs), name: relatedServices, widget: list, required: false }
+      - { label: Key takeaways, name: keyTakeaways, widget: list, required: false, hint: "Three one-line points shown at the top of the piece." }
       - { label: Body, name: body, widget: markdown }
 
   - name: services
@@ -69,6 +70,13 @@ collections:
           - { label: What we assess, name: whatWeAssess, widget: list }
           - { label: Outcomes, name: outcomes, widget: list }
           - { label: Related tools (slugs), name: relatedTools, widget: list, required: false }
+          - label: FAQ
+            name: faq
+            widget: list
+            required: false
+            fields:
+              - { label: Question, name: question, widget: string }
+              - { label: Answer, name: answer, widget: text }
 
   - name: tools
     label: Tool collections
